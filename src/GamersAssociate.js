@@ -1,15 +1,22 @@
 
 BasicGame.GamersAssociate = function (game) {
-
 };
 
 BasicGame.GamersAssociate.prototype = {
 
 	create: function () {
-		this.add.sprite(0, 0, 'ga');
+		var gaSprite = this.add.sprite(this.game.width / 2, this.game.height / 2, 'ga');
+        gaSprite.anchor.setTo(0.5, 0.5);
+        var gaSound = this.add.audio('gaHeartbeat');
+
+        gaSound.play();
+        gaSprite.scale.setTo(0.8, 0.8);
+        this.game.add.tween(gaSprite.scale).to( { x: 1, y: 1 }, 150, Phaser.Easing.Linear.None, true, 0, 0, true);
+
+
         var self = this;
         setTimeout(function() {
-                self.state.start('Sponsor');
+                self.state.start('Preloader');
             },
             2000);
 	},
