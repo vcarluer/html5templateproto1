@@ -9,10 +9,10 @@ var Scoreboard = function(game) {
     this.scoreboard = this.create(this.game.width / 2, 200, 'scoreboard');
     this.scoreboard.anchor.setTo(0.5, 0.5);
 
-    this.scoreText = this.game.add.bitmapText(this.scoreboard.width, 180, 'caslon', '', 18);
+    this.scoreText = this.game.add.bitmapText(this.scoreboard.width, 180, 'gameFont', '', 18);
     this.add(this.scoreText);
 
-    this.bestScoreText = this.game.add.bitmapText(this.scoreboard.width, 230, 'caslon', '', 18);
+    this.bestScoreText = this.game.add.bitmapText(this.scoreboard.width, 230, 'gameFont', '', 18);
     this.add(this.bestScoreText);
 
     // add our start button with a callback

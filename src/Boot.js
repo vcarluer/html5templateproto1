@@ -19,12 +19,11 @@ BasicGame.Boot.prototype = {
     preload: function () {
         this.game.stage.backgroundColor = "#fff";
         //  Here we load the assets required for our preloader (in this case a background and a loading bar)
-        this.load.image('ga', 'images/ga1024.png');
-        this.load.image('sponsor', 'images/sponsor1024.png');
-        this.load.audio('gaHeartbeat', ['audio/heartbeat.mp3', 'audio/heartbeat.ogg']);
+
 
         this.load.image('preloaderBackground', 'images/preloader_background.png');
-        this.load.image('preloaderBar', 'images/preloadr_bar.png');
+        this.load.image('preloaderBar', 'images/preloader_bar.png');
+        this.load.image('preloaderBarGray', 'images/preloader_bar_gray.png');
 
     },
 

@@ -16,7 +16,7 @@ BasicGame.GamersAssociate.prototype = {
 
         var self = this;
         setTimeout(function() {
-                self.state.start('Preloader');
+                self.state.start('MainMenu');
             },
             2000);
 	},

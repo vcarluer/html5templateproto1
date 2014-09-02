@@ -10,7 +10,7 @@ BasicGame.CheckOrientation.prototype = {
 
 	update: function () {
         if (BasicGame.orientated) {
-            this.state.start('GamersAssociate');
+            this.state.start('Preloader');
         }
 	}
 
