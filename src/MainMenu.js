@@ -20,7 +20,6 @@ BasicGame.MainMenu.prototype = {
 		this.add.sprite(0, 0, 'titlepage');
 
 		this.playButton = this.add.button(400, 600, 'playButton', this.startGame, this, 2, 1, 0);
-
 	},
 
 	update: function () {
@@ -36,6 +35,9 @@ BasicGame.MainMenu.prototype = {
 
 		//	And start the actual game
 		this.state.start('Game');
+
+		/*this.scale.fullScreenScaleMode = Phaser.ScaleManager.EXACT_FIT;
+		this.scale.startFullScreen();*/
 
 	}
 

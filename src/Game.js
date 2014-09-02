@@ -27,9 +27,12 @@ BasicGame.Game = function (game) {
 BasicGame.Game.prototype = {
 
 	create: function () {
+		this.score = 42;
 
-		//	Honestly, just about anything could go here. It's YOUR game after all. Eat your heart out!
-
+		this.add.sprite(0, 0, 'background');
+		this.scoreboard = new Scoreboard(this.game);
+		this.add.existing(this.scoreboard);
+		this.scoreboard.show(this.score);
 	},
 
 	update: function () {
@@ -45,7 +48,6 @@ BasicGame.Game.prototype = {
 
 		//	Then let's go back to the main menu.
 		this.state.start('MainMenu');
-
 	}
 
 };

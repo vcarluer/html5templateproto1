@@ -31,7 +31,7 @@ BasicGame.Boot.prototype = {
         this.input.maxPointers = 1;
         this.stage.disableVisibilityChange = true;
 
-        if (this.game.device.desktop)
+	    if (this.game.device.desktop)
         {
             BasicGame.orientated = true;
             this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
@@ -61,7 +61,6 @@ BasicGame.Boot.prototype = {
         }
 
         this.state.start('CheckOrientation');
-
     },
 
     gameResized: function (width, height) {

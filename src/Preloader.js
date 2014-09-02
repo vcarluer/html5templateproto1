@@ -30,7 +30,9 @@ BasicGame.Preloader.prototype = {
 		this.load.audio('titleMusic', ['audio/main_menu.mp3']);
 		this.load.bitmapFont('caslon', 'fonts/desyrel-pink.png', 'fonts/desyrel-pink.xml');
 		//	+ lots of other required assets here
-
+		this.load.image('background', 'images/background.png');
+		this.load.image('scoreboard', 'images/scoreboard.png');
+		this.load.image('gameover', 'images/gameover.png');
 	},
 
 	create: function () {
