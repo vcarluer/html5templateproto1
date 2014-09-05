@@ -16,7 +16,7 @@ var Scoreboard = function(game) {
     this.add(this.bestScoreText);
 
     // add our start button with a callback
-	this.startButton = this.game.add.button(this.game.width/2, 600, 'playButton', this.startClick, this, 2, 1, 0);
+	this.startButton = this.game.add.button(this.game.width/2, this.game.height - 100, 'playButton', this.startClick, this, 2, 1, 0);
     this.startButton.anchor.setTo(0.5,0.5);
 
 	this.add(this.startButton);

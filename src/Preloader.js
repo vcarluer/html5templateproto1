@@ -17,8 +17,8 @@ BasicGame.Preloader.prototype = {
 		//	A nice sparkly background and a loading progress bar
 		this.add.sprite(0, 0, 'preloaderBackground');
 
-        var barX = (1024 - 900) / 2;
-        var barY = this.game.height - 100;
+        var barX = (960 - 800) / 2;
+        var barY = this.game.height - 75;
         this.add.sprite(barX, barY, 'preloaderBarGray');
 		this.preloadBar = this.add.sprite(barX, barY, 'preloaderBar');
 
@@ -30,7 +30,7 @@ BasicGame.Preloader.prototype = {
 		//	Here we load the rest of the assets our game needs.
 		//	As this is just a Project Template I've not provided these assets, the lines below won't work as the files themselves will 404, they are just an example of use.
 		// this.load.atlas('playButton', 'images/button_sprite_sheet.png', 'images/button_sprite_sheet.json');
-        this.load.image('ga', 'images/ga1024.png');
+        this.load.image('ga', 'images/ga.png');
         this.load.image('sponsor', 'images/sponsor1024.png');
         this.load.audio('gaHeartbeat', ['audio/heartbeat.mp3', 'audio/heartbeat.ogg']);
 

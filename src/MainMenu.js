@@ -17,17 +17,17 @@ BasicGame.MainMenu.prototype = {
 
 		this.music = this.add.audio('titleMusic');
         this.game.soundMute = false;
-		this.music.play();
+		// this.music.play();
 
         this.background = this.add.sprite(0, 0, 'backgroundMenu');
-        this.title = this.add.sprite(this.game.width / 2, this.game.height / 3, 'title');
-        this.title.anchor.setTo(0.5, 0.5);
-        var soundX = soundY = 25
+        this.title = this.add.sprite(0, 25, 'title');
+        var soundX = 25, soundY = 25;
         this.soundButonOn = this.add.button(soundX, soundY, 'soundOn', function() { self.switchSound(); });
         this.soundButonOff = this.add.button(soundX, soundY, 'soundOff', function() { self.switchSound(); });
         this.soundButonOff.visible = false;
 
-		this.playButton = this.add.button(400, 600, 'playButton', this.startGame, this, 2, 1, 0);
+		this.playButton = this.add.button(this.game.width / 2, this.game.height - 100, 'playButton', this.startGame, this, 2, 1, 0);
+        this.playButton.anchor.setTo(0.5, 0.5);
 	},
 
 	update: function () {
