@@ -17,16 +17,20 @@ BasicGame.MainMenu.prototype = {
 
 		this.music = this.add.audio('titleMusic');
         this.game.soundMute = false;
+        this.game.menuSelect = this.add.audio('menuSelect');
+
 		// this.music.play();
 
         this.background = this.add.sprite(0, 0, 'backgroundMenu');
-        this.title = this.add.sprite(0, 25, 'title');
+        this.title = this.add.sprite(this.game.width / 2, 10, 'title');
+        this.title.anchor.setTo(0.5, 0);
+
         var soundX = 25, soundY = 25;
         this.soundButonOn = this.add.button(soundX, soundY, 'soundOn', function() { self.switchSound(); });
         this.soundButonOff = this.add.button(soundX, soundY, 'soundOff', function() { self.switchSound(); });
         this.soundButonOff.visible = false;
 
-		this.playButton = this.add.button(this.game.width / 2, this.game.height - 100, 'playButton', this.startGame, this, 2, 1, 0);
+		this.playButton = this.add.button(this.game.width / 2, this.game.height - 140 - 64, 'play', this.startGame, this);
         this.playButton.anchor.setTo(0.5, 0.5);
 	},
 
@@ -53,12 +57,20 @@ BasicGame.MainMenu.prototype = {
 		//	Ok, the Play Button has been clicked or touched, so let's stop the music (otherwise it'll carry on playing)
 		this.music.stop();
 
+        this.game.menuSelect.play();
+        this.game.add.tween(this.playButton.scale).
+            to( { x: 1.1, y: 1.1 }, 150, Phaser.Easing.Linear.None, true, 0, 0, true)
+            .onComplete.add(this.startGameInternal, this);
 		//	And start the actual game
-		this.state.start('Game');
+		//this.state.start('Game');
 
 		/*this.scale.fullScreenScaleMode = Phaser.ScaleManager.EXACT_FIT;
 		this.scale.startFullScreen();*/
 
-	}
+	},
+
+    startGameInternal: function() {
+        this.state.start('Game');
+    }
 
 };

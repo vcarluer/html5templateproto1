@@ -18,7 +18,7 @@ BasicGame.Preloader.prototype = {
 		this.add.sprite(0, 0, 'preloaderBackground');
 
         var barX = (960 - 800) / 2;
-        var barY = this.game.height - 75;
+        var barY = this.game.height - 75 - 64;
         this.add.sprite(barX, barY, 'preloaderBarGray');
 		this.preloadBar = this.add.sprite(barX, barY, 'preloaderBar');
 
@@ -31,15 +31,15 @@ BasicGame.Preloader.prototype = {
 		//	As this is just a Project Template I've not provided these assets, the lines below won't work as the files themselves will 404, they are just an example of use.
 		// this.load.atlas('playButton', 'images/button_sprite_sheet.png', 'images/button_sprite_sheet.json');
         this.load.image('ga', 'images/ga.png');
-        this.load.image('sponsor', 'images/sponsor1024.png');
         this.load.audio('gaHeartbeat', ['audio/heartbeat.mp3', 'audio/heartbeat.ogg']);
 
         this.load.image('title', 'images/title.png');
         this.load.image('backgroundMenu', 'images/background_menu.png');
+        this.load.image('play', 'images/control-play.png');
+        this.load.audio('menuSelect', ['audio/menuselect.mp3', 'audio/menuselect.ogg']);
         this.load.image('soundOn', 'images/control-sound-on.png');
         this.load.image('soundOff', 'images/control-sound-off.png');
 
-        this.load.spritesheet('playButton', 'images/button_sprite_sheet.png', 193, 71);
 		this.load.audio('titleMusic', ['audio/main_menu.mp3']);
 		this.load.bitmapFont('gameFont', 'fonts/desyrel-pink.png', 'fonts/desyrel-pink.xml');
 		//	+ lots of other required assets here
