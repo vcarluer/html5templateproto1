@@ -39,13 +39,15 @@ BasicGame.Preloader.prototype = {
         this.load.audio('menuSelect', ['audio/menuselect.mp3', 'audio/menuselect.ogg']);
         this.load.image('soundOn', 'images/control-sound-on.png');
         this.load.image('soundOff', 'images/control-sound-off.png');
+        this.load.image('pause', 'images/control-pause.png');
+        this.load.image('home', 'images/control-home.png');
+        this.load.image('restart', 'images/control-restart.png');
 
 		this.load.audio('titleMusic', ['audio/main_menu.mp3']);
 		this.load.bitmapFont('gameFont', 'fonts/desyrel-pink.png', 'fonts/desyrel-pink.xml');
 		//	+ lots of other required assets here
 		this.load.image('background', 'images/background.png');
-		this.load.image('scoreboard', 'images/scoreboard.png');
-		this.load.image('gameover', 'images/gameover.png');
+		this.load.image('board', 'images/board.png');
 	},
 
 	create: function () {

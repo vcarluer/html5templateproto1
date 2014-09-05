@@ -27,13 +27,28 @@ BasicGame.Game = function (game) {
 BasicGame.Game.prototype = {
 
 	create: function () {
+        var self = this;
+
 		this.score = 42;
 
 		this.add.sprite(0, 0, 'background');
+        var headY = 25 + 60 / 2;
+        this.pauseButton = this.add.button(25 + 30, headY, 'pause', function() { self.pause(); });
+        this.pauseButton.anchor.setTo(0.5, 0.5);
+
 		this.scoreboard = new Scoreboard(this.game);
 		this.add.existing(this.scoreboard);
 		this.scoreboard.show(this.score);
 	},
+
+    pause: function() {
+        if (!this.game.soundMute) {
+            this.game.menuSelect.play();
+        }
+
+        this.game.add.tween(this.pauseButton.scale).
+            to( { x: 1.1, y: 1.1 }, 150, Phaser.Easing.Linear.None, true, 0, 0, true);
+    },
 
 	update: function () {
 
