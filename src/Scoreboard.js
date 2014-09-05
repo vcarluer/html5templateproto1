@@ -6,7 +6,7 @@ var Scoreboard = function(game) {
     /*gameover = this.create(this.game.width / 2, 100, 'gameover');
     gameover.anchor.setTo(0.5, 0.5);*/
 
-    this.scoreboard = this.create(this.game.width / 2, 200, 'board');
+    this.scoreboard = this.create(this.game.width / 2, 213, 'board');
     this.scoreboard.anchor.setTo(0.5, 0.5);
 
     this.scoreText = this.game.add.bitmapText(this.scoreboard.width, 180, 'gameFont', '', 18);

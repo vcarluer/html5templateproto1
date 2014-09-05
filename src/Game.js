@@ -38,7 +38,9 @@ BasicGame.Game.prototype = {
 
 		this.scoreboard = new Scoreboard(this.game);
 		this.add.existing(this.scoreboard);
-		this.scoreboard.show(this.score);
+
+        this.pauseboard = new Pauseboard(this.game);
+        this.add.existing(this.pauseboard);
 	},
 
     pause: function() {
@@ -48,6 +50,8 @@ BasicGame.Game.prototype = {
 
         this.game.add.tween(this.pauseButton.scale).
             to( { x: 1.1, y: 1.1 }, 150, Phaser.Easing.Linear.None, true, 0, 0, true);
+
+        this.pauseboard.show();
     },
 
 	update: function () {

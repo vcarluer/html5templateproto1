@@ -48,6 +48,9 @@ BasicGame.Preloader.prototype = {
 		//	+ lots of other required assets here
 		this.load.image('background', 'images/background.png');
 		this.load.image('board', 'images/board.png');
+
+        // GAME
+        this.load.image('gameover', 'images/gameover.png');
 	},
 
 	create: function () {
